@@ -2,7 +2,7 @@
 		{
 				"id": 1,
 				"category": "Politics",
-				"topics": "immigration" "refugees" "POTUS" "rights" "healthcare",
+				"topics": {"immigration", "refugees", "POTUS", "rights", "healthcare"},
 				"count_tweets&retweets": 7456,
 				"percentage": 33.89,
 				"most_tweeted_keyword": "America",
@@ -22,7 +22,7 @@
 		{
 			"id": 2,
 			"category": "Technology",
-			"topics": "Twitter" "social media" "stocks" "Square",
+			"topics": {"Twitter", "social media", "stocks", "Square"},
 			"count_tweets&retweets": 8742,
 			"percentage": 39.74,
 			"most_tweeted_keyword": "Twitter",
@@ -42,7 +42,7 @@
 		{
 			"id": 3,
 			"category": "Music",
-			"topics": "revolutionary" "Jay-Z" "Beyonce" "slay" "formation" "lemonade",
+			"topics": {"revolutionary", "Jay-Z", "Beyonce", "slay", "formation", "lemonade"},
 			"count_tweets&retweets": 327,
 			"percentage": 1.48,
 			"most_tweeted_keyword": "Legendary",
@@ -63,7 +63,7 @@
 		{
 			"id": 4,
 			"category": "Education",
-			"topics": "#CSforall" "university" "poverty" "funding",
+			"topics": {"#CSforall", "university", "poverty", "funding"},
 			"count_tweets&retweets": 1032,
 			"percentage": 4.69,
 			"most_tweeted_keyword": "Change",
@@ -85,7 +85,7 @@
 		{
 			"id": 5,
 			"category": "Sports",
-			"topics": "Baseball" "Running" "Marathon" "Nike",
+			"topics": {"Baseball", "Running", "Marathon", "Nike"},
 			"count_tweets&retweets": 598,
 			"percentage": 2.7,
 			"most_tweeted_keyword": "Seconds",
@@ -106,7 +106,7 @@
 		{
 			"id": 6,
 			"category": "Books",
-			"topics": "New York Times" "Socrates" "Tao Te Ching" "Wisdom",
+			"topics": {"New York Times", "Socrates", "Tao Te Ching", "Wisdom"},
 			"count_tweets&retweets": 57,
 			"percentage": 0.26,
 			"most_tweeted_keyword": "Education",
@@ -127,7 +127,7 @@
 		{
 			"id": 7,
 			"category": "Activisim",
-			"topics": "#BlackLivesMatter" "#LoveWins" "ILookLikeAnEngineer" "LoveTwitter" "immigration" "#LoveWhereYouWork" "America",
+			"topics": {"#BlackLivesMatter", "#LoveWins", "ILookLikeAnEngineer", "LoveTwitter", "immigration", "#LoveWhereYouWork", "America"},
 			"count_tweets&retweets": 3712,
 			"percentage": 16.87,
 			"most_tweeted_keyword": "liberty",
@@ -147,7 +147,7 @@
 		{
 			"id": 8,
 			"category": "Miscellaneous",
-			"topics": "Love" "Company" "Excellence" "Thank You",
+			"topics": {"Love", "Company", "Excellence", "Thank You"},
 			"count_tweets&retweets": 669,
 			"percentage": 3.04,
 			"most_tweeted_keyword": "Love",
