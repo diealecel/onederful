@@ -7,20 +7,19 @@ var palette = {
       "lightgray": "#E5E8E8",
       "gray": "#708284",
       "mediumgray": "#536870",
-      "blue": "#3B757F"
+      "blue": "#3B757F", 
+      "brown": "#996633",
   }
 
-var colors = d3.scale.category20();
-
 var nodes = [
-      { name: "Technology",target: [0], value: 40
+
+      { name: "Religion", target: [0, 3], value: 48 
       },
-  // { name: "Movies", target: [0], value: 40 },
-      { name: "Sports", target: [0, 1], value: 65 },
-      { name: "Education", target: [0, 1, 2], value: 52 },
-      { name: "Religion", target: [0, 3], value: 48 },
       { name: "Politics", target: [0,3,4], value: 40 },
+      { name: "Technology", target: [6], value: 40},
+      { name: "Sports", target: [7], value: 37},
       { name: "Books", target: [0,3,4,5], value: 36 },
+      { name: "Education", target: [0, 1, 2], value: 52 },
       { name: "Movies", target: [0, 1, 2], value: 52 },
       { name: "Makeup", target: [0, 1, 2, 8], value: 37 },
       { name: "Television", target: [0,1,2], value: 35 },
@@ -33,6 +32,7 @@ var nodes = [
       { name: "Memes", target: [0,1,2,12], value: 57 },
       { name: "Exercise", target: [0,9,10], value: 25 },
       { name: "Social Media", target: [0,9,10], value: 37 },
+      { name: "Activism", target: [7,4,6,3], value: 25 },
 ];
 
 var links = [];
@@ -67,7 +67,7 @@ var force = d3.layout.force()
 
       var link = myChart.selectAll('line')
             .data(links).enter().append('line')
-            .attr('stroke', palette.lightgray)
+            .attr('stroke', palette.brown)
             .attr('strokewidth', '1');
 
       var node =  myChart.selectAll('circle')
@@ -84,30 +84,14 @@ var force = d3.layout.force()
                   if ( i > 0 ) {
                         return circleWidth + d.value;
                   } else {
-                        return circleWidth + 35;
+                    return circleWidth + 25;
                   }
             })
             .attr('fill', function(d,i){
-                  if ( i > 0 ) {
-                        return colors(i);
-                  } else {
-                        return '#fff';
-                  }
+                return '#B3E0FF';
+                  
             })
-            .attr('strokewidth', function(d,i){
-                  if ( i > 0 ) {
-                        return '0';
-                  } else {
-                        return '2';
-                  }
-            })
-            .attr('stroke', function(d,i){
-                  if ( i > 0 ) {
-                        return '';
-                  } else {
-                        return 'black';
-                  }
-            });
+
 
 
       force.on('tick', function(e){
@@ -129,11 +113,11 @@ var force = d3.layout.force()
             .attr('fill', function(d, i){
               console.log(d.value);
                   if ( i > 0 && d.value < 10 ) {
-                        return palette.mediumgray;
+                        return palette.black;
                   } else if ( i > 0 && d.value >10 ) {
-                        return palette.lightgray;
+                        return palette.black;
                   } else {
-                        return palette.blue;
+                        return palette.black;
                   }
             })
             .attr('text-anchor', function(d, i) {
