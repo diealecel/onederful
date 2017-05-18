@@ -1,3 +1,22 @@
+const SIZE_FACTOR = 5;
+
+var nodes = [];
+
+$.ajax({
+    url: 'js/bubbles.json'
+  }).done( function(data) {
+    // DO STUFF WITH data
+    if(nodes.length == 0) {
+    for(var i = 0; i < data.length; i++) {
+        //console.log(data[i]);
+        var targets = [];
+        for(var j = i; j >= 0; j--) {
+            targets.push(j);
+        }
+        nodes.push({name: data[i].category, target: targets, value: SIZE_FACTOR * parseInt(data[i].percentage)});
+    }
+  //});
+
 var   w = 1000,
       h =  800,
       circleWidth = 5;
@@ -10,9 +29,9 @@ var palette = {
       "blue": "#3B757F"
   }
 
-var colors = d3.scale.category20();
+var colors = []//d3.scale.category20();
 
-var nodes = [
+/*var nodes = [
       { name: "Technology",target: [0], value: 40},
       { name: "Movies", target: [0], value: 40 },
       { name: "Sports", target: [0, 1], value: 65 },
@@ -32,7 +51,7 @@ var nodes = [
       { name: "Memes", target: [0,1,2,12], value: 57 },
       { name: "Exercise", target: [0,9,10], value: 25 },
       { name: "Social Media", target: [0,9,10], value: 37 },
-];
+];*/
 
 var links = [];
 
@@ -46,10 +65,6 @@ for (var i = 0; i < nodes.length; i++){
       };
 };
 
-// select the div that we created
-//var myChart = d3.select('body')
-//debugger;
-//var myChart = d3.select('.take-flight-project-insert')
 var myChart = d3.select("body").selectAll("div.take-flight-project-insert")
       .append("div")
         .classed("svg-container", true)
@@ -75,13 +90,13 @@ var force = d3.layout.force()
             .data(nodes).enter()
             .append('g')
             .call(force.drag);
-      console.log(node);
+      //console.log(node);
 
      node.append('circle')
             .attr('cx', function(d){return d.x; })
             .attr('cy', function(d){return d.y; })
             .attr('r', function(d,i){
-                  console.log(d.value);
+                  //console.log(d.value);
                   if ( i > 0 ) {
                         return circleWidth + d.value;
                   } else {
@@ -128,7 +143,7 @@ var force = d3.layout.force()
             .text(function(d){ return d.name; })
             .attr('font-family', 'Raleway', 'Helvetica Neue, Helvetica')
             .attr('fill', function(d, i){
-              console.log(d.value);
+              //console.log(d.value);
                   if ( i > 0 && d.value < 10 ) {
                         return palette.mediumgray;
                   } else if ( i > 0 && d.value >10 ) {
@@ -140,12 +155,15 @@ var force = d3.layout.force()
             .attr('text-anchor', function(d, i) {
                   return 'middle';
             })
-            .attr('font-size', function(d, i){
-                  if (i > 0) {
-                        return '.8em';
+            .attr('font-size', function(data, i){
+                console.log(data);
+                  if (data.value > 100) {
+                        return '2.5em';
                   } else {
-                        return '.9em';
+                        return '2em';
                   }
             })
 
 force.start();
+}
+});
