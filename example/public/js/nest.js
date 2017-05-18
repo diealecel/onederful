@@ -19,7 +19,7 @@ $.ajax({
 
 var   w = 1000,
       h =  800,
-      circleWidth = 5;
+      circleWidth = 10;
 
 
 var palette = {
@@ -31,6 +31,7 @@ var palette = {
 
 var colors = []//d3.scale.category20();
 
+<<<<<<< HEAD
 /*var nodes = [
       { name: "Technology",target: [0], value: 40},
       { name: "Movies", target: [0], value: 40 },
@@ -52,6 +53,20 @@ var colors = []//d3.scale.category20();
       { name: "Exercise", target: [0,9,10], value: 25 },
       { name: "Social Media", target: [0,9,10], value: 37 },
 ];*/
+=======
+var nodes = [
+      { name: "Politics", target: [3, 6], value: 103 },
+      { name: "Technology", target: [0, 4], value: 70 },
+      { name: "Music", target: [1, 4], value: 72 },
+      { name: "Education", target: [0, 3], value: 75 }, 
+      { name: "Sport", target: [6, 7], value: 73 },
+      { name: "Books", target: [0, 3], value: 71 },
+      { name: "Activism", target: [3, 4], value: 77 },
+      { name: "Misc.", target: [5, 2], value: 109 },
+];
+>>>>>>> 75dd31a9bf309b81f692a537e5069ea02e5b215a
+
+
 
 var links = [];
 
@@ -65,6 +80,10 @@ for (var i = 0; i < nodes.length; i++){
       };
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 75dd31a9bf309b81f692a537e5069ea02e5b215a
 var myChart = d3.select("body").selectAll("div.take-flight-project-insert")
       .append("div")
         .classed("svg-container", true)
@@ -78,12 +97,12 @@ var force = d3.layout.force()
       .nodes(nodes)
       .links([])
       .gravity(0.1)
-      .charge(-1000)
+      .charge(-2500)
       .size([w,h]);
 
       var link = myChart.selectAll('line')
             .data(links).enter().append('line')
-            .attr('stroke', palette.lightgray)
+            .attr('stroke', '#532C00')
             .attr('strokewidth', '1');
 
       var node =  myChart.selectAll('circle')
@@ -155,6 +174,7 @@ var force = d3.layout.force()
             .attr('text-anchor', function(d, i) {
                   return 'middle';
             })
+<<<<<<< HEAD
             .attr('font-size', function(data, i){
                 console.log(data);
                   if (data.value > 100) {
@@ -162,6 +182,10 @@ var force = d3.layout.force()
                   } else {
                         return '2em';
                   }
+=======
+            .attr('font-size', function(d, i){
+                  return '1.9em';
+>>>>>>> 75dd31a9bf309b81f692a537e5069ea02e5b215a
             })
 
 force.start();
