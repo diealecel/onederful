@@ -1,6 +1,6 @@
 var   w = 1000,
       h =  800,
-      circleWidth = 5;
+      circleWidth = 10;
 
 
 var palette = {
@@ -13,26 +13,17 @@ var palette = {
 var colors = d3.scale.category20();
 
 var nodes = [
-      { name: "Technology",target: [0], value: 40},
-      { name: "Movies", target: [0], value: 40 },
-      { name: "Sports", target: [0, 1], value: 65 },
-      { name: "Education", target: [0, 1, 2], value: 52 },
-      { name: "Religion", target: [0, 3], value: 48 },
-      { name: "Politics", target: [0,3,4], value: 40 },
-      { name: "Books", target: [0,3,4,5], value: 36 },
-      { name: "Movies", target: [0, 1, 2], value: 52 },
-      { name: "Makeup", target: [0, 1, 2, 8], value: 37 },
-      { name: "Television", target: [0,1,2], value: 35 },
-      { name: "Music", target: [0,1,2,3,9], value: 67 },
-      { name: "Entertainment", target: [0,1,2,3,4,5,6,7,8,10], value: 68 },
-      { name: "Misc", target: [0,1,2,7,8 ], value: 16 },
-      { name: "Travel", target: [0,1,2,7,8], value: 25 },
-      { name: "Clothes", target: [0,1,2,3,4,5,6,7,8,9,10,11,12], value: 45 },
-      { name: "College", target: [0,1,2,7,8], value: 25 },
-      { name: "Memes", target: [0,1,2,12], value: 57 },
-      { name: "Exercise", target: [0,9,10], value: 25 },
-      { name: "Social Media", target: [0,9,10], value: 37 },
+      { name: "Politics", target: [3, 6], value: 103 },
+      { name: "Technology", target: [0, 4], value: 70 },
+      { name: "Music", target: [1, 4], value: 72 },
+      { name: "Education", target: [0, 3], value: 75 }, 
+      { name: "Sport", target: [6, 7], value: 73 },
+      { name: "Books", target: [0, 3], value: 71 },
+      { name: "Activism", target: [3, 4], value: 77 },
+      { name: "Misc.", target: [5, 2], value: 109 },
 ];
+
+
 
 var links = [];
 
@@ -46,10 +37,7 @@ for (var i = 0; i < nodes.length; i++){
       };
 };
 
-// select the div that we created
-//var myChart = d3.select('body')
-//debugger;
-//var myChart = d3.select('.take-flight-project-insert')
+
 var myChart = d3.select("body").selectAll("div.take-flight-project-insert")
       .append("div")
         .classed("svg-container", true)
@@ -63,12 +51,12 @@ var force = d3.layout.force()
       .nodes(nodes)
       .links([])
       .gravity(0.1)
-      .charge(-1000)
+      .charge(-2500)
       .size([w,h]);
 
       var link = myChart.selectAll('line')
             .data(links).enter().append('line')
-            .attr('stroke', palette.lightgray)
+            .attr('stroke', '#532C00')
             .attr('strokewidth', '1');
 
       var node =  myChart.selectAll('circle')
@@ -141,11 +129,7 @@ var force = d3.layout.force()
                   return 'middle';
             })
             .attr('font-size', function(d, i){
-                  if (i > 0) {
-                        return '.8em';
-                  } else {
-                        return '.9em';
-                  }
+                  return '1.9em';
             })
 
 force.start();
