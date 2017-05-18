@@ -61,10 +61,8 @@ $.ajax({
     console.log(data.length);
     for (i = 0; i < data.length; i++) {
       var tweet = data[i];
-      tweet.tweeter_img = "/twitter_profile_files/mkpdB9Tf_bigger.jpg";
-      tweet.tweeter_name = "jack";
-      tweet.tweet_time_display = "18h";
       var child = myDiv.clone();
+<<<<<<< HEAD
       child.html("<li class=\"js-stream-item stream-item stream-item\">" +
   "<div class=\"tweet js-stream-tweet js-actionable-tweet js-profile-popup-actionable dismissible-content original-tweet js-original-tweet\">" +
     "<div class=\"content\">" +
@@ -141,6 +139,10 @@ $.ajax({
 "</div>" +
 "</li>");
      //  myDiv.append(child);
+=======
+      child.html();
+      myDiv.append(child);
+>>>>>>> 469aa6858c6d2b2e23b7b74277576dfa63ca673b
     }   
   });
 </script>
