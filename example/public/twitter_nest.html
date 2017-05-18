@@ -15,6 +15,10 @@
   <link rel="preload" href="./twitter_profile_files/17.commons.en.02cc7034ec3c00f10d04.js" as="script">
   <link rel="preload" href="./twitter_profile_files/8.pages_home.en.80196d085a907c892d99.js" as="script">
 
+
+
+
+
   <title>jack (@jack) | Twitter</title>
     
   <meta name="msapplication-TileImage" content="//abs.twimg.com/favicons/win8-tile-144.png">
@@ -46,12 +50,13 @@
 
 <!-- TWITTER UNIVERSITY -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 <script>
 $.ajax({
     url: '/tweets'
   }).done( function(data) {
     // DO STUFF WITH data
-    var myDiv = $(".take-flight-project-insert");
+    var myDiv = $(".ft");
     console.log(data);
     console.log(data.length);
     for (i = 0; i < data.length; i++) {
@@ -135,7 +140,7 @@ $.ajax({
 "</div>" +
 "</div>" +
 "</li>");
-      myDiv.append(child);
+     //  myDiv.append(child);
     }   
   });
 </script>
@@ -150,6 +155,13 @@ $.ajax({
 <body class="no-nav-banners three-col logged-in user-style-jack enhanced-mini-profile ProfilePage ProfilePage--withWarning supports-drag-and-drop" data-fouc-class-names="swift-loading no-nav-banners" dir="ltr">
 
     <script src="./twitter_profile_files/init.en.89893350430df5b9f280.js" async=""></script>
+
+
+    <!--  Importing js for nest -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
+  <script src="./js/nest.js"></script>
+
+
 
     <div id="doc" class="route-profile">
         <div class="topbar js-topbar">
@@ -845,8 +857,9 @@ $.ajax({
 
 <!-- BEGIN INSERT DIV -->
 <div class="take-flight-project-insert">
-
-
+Still here???
+  <div class='bubbles'></div>
+      <script src="js/nest.js"></script>
 </div>
 <!-- END INSERT DIV -->
           
