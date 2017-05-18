@@ -1,5 +1,3 @@
-console.log('in here');
-
 var   w = 1000,
       h =  800,
       circleWidth = 5;
