@@ -13,8 +13,7 @@ var palette = {
 var colors = d3.scale.category20();
 
 var nodes = [
-      { name: "Technology",target: [0], value: 40
-      },
+      { name: "Technology",target: [0], value: 40},
       { name: "Movies", target: [0], value: 40 },
       { name: "Sports", target: [0, 1], value: 65 },
       { name: "Education", target: [0, 1, 2], value: 52 },
