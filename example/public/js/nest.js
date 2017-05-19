@@ -1,5 +1,3 @@
-const SIZE_FACTOR = 5;
-
 var nodes = [];
 
 $.ajax({
@@ -12,7 +10,7 @@ $.ajax({
         for(var j = i; j >= 0; j--) {
             targets.push(j);
         }
-        nodes.push({name: data[i].category, target: targets, value: (100 * parseInt(data[i].percentage) / 100) + 50});
+        nodes.push({name: data[i].category, target: targets, value: parseInt(data[i].percentage) + 50});
     }
 
 var   w = 1000,
@@ -147,6 +145,7 @@ var force = d3.layout.force()
             .attr('font-family', 'Raleway', 'Helvetica Neue, Helvetica')
             .attr('fill', function(d, i){
               //console.log(d.value);
+                return palette.lightgray;
                   if ( i > 0 && d.value < 10 ) {
                         return palette.mediumgray;
                   } else if ( i > 0 && d.value >10 ) {
