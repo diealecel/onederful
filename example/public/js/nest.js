@@ -69,7 +69,7 @@ var force = d3.layout.force()
             .attr('cy', function(d){return d.y; })
             .attr('r', function(d,i){
                   //console.log(d.value);
-                  if ( i > 0 ) {
+                  if ( i >= 0 ) {
                         return circleWidth + d.value;
                   } else {
                         return circleWidth + 35;
