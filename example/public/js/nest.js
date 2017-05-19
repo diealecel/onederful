@@ -86,7 +86,7 @@ var force = d3.layout.force()
 
       var link = myChart.selectAll('line')
             .data(links).enter().append('line')
-            .attr('stroke', '#532C00')
+            .attr('stroke', '#000000')
             .attr('strokewidth', '1');
 
       var node =  myChart.selectAll('circle')
