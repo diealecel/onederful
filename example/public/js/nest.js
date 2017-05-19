@@ -107,7 +107,7 @@ var force = d3.layout.force()
                   }
             })
             .attr('fill', function(d,i){
-                  if ( i > 0 ) {
+                  if ( i >= 0 ) {
                         return colors[i];
                   } else {
                         return '#fff';
@@ -121,7 +121,7 @@ var force = d3.layout.force()
                   }
             })
             .attr('stroke', function(d,i){
-                  if ( i > 0 ) {
+                  if ( i >= 0 ) {
                         return '';
                   } else {
                         return 'black';
