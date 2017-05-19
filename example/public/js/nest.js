@@ -12,11 +12,11 @@ $.ajax({
         for(var j = i; j >= 0; j--) {
             targets.push(j);
         }
-        nodes.push({name: data[i].category, target: targets, value: SIZE_FACTOR * parseInt(data[i].percentage)});
+        nodes.push({name: data[i].category, target: targets, value: (100 * parseInt(data[i].percentage) / 100) + 50});
     }
 
 var   w = 1000,
-      h = 1000,
+      h = 950,
       circleWidth = 10;
 
 
@@ -27,7 +27,10 @@ var palette = {
       "blue": "#3B757F"
   }
 
-var colors = d3.scale.category20();
+//var colors = d3.scale.category20();
+
+var colors = ['#17BF63', '#68e090', '#ffad1f', '#ffd03f', '#e0245e', '#f6809a', '#794bc4', '#a37ced', '#f45d22', '#ff8d57', '#1da1f2', '#71c9f8'];
+
 
 /*var nodes = [
       { name: "Technology",target: [0], value: 40},
@@ -71,13 +74,13 @@ var myChart = d3.select("body").selectAll("div.take-flight-project-insert")
 
       .append('svg')
         .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0 0 1000 800")
+        .attr("viewBox", "0 0 1000 1100")
         .classed("svg-content-responsive", true)
 
 var force = d3.layout.force()
       .nodes(nodes)
       .links([])
-      .gravity(0.1)
+      .gravity(0.08)
       .charge(-2500)
       .size([w,h]);
 
@@ -105,7 +108,7 @@ var force = d3.layout.force()
             })
             .attr('fill', function(d,i){
                   if ( i > 0 ) {
-                        return colors(i);
+                        return colors[i];
                   } else {
                         return '#fff';
                   }
