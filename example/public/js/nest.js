@@ -10,7 +10,7 @@ $.ajax({
         for(var j = i; j >= 0; j--) {
             targets.push(j);
         }
-        nodes.push({name: data[i].category, target: targets, value: parseInt(data[i].percentage) + 50});
+        nodes.push({name: data[i].category, target: targets, value: parseInt(data[i].percentage) + 60});
     }
 
 var   w = 1000,
@@ -24,35 +24,6 @@ var palette = {
       "mediumgray": "#536870",
       "blue": "#3B757F"
   }
-
-//var colors = d3.scale.category20();
-
-var colors = ['#17BF63', '#68e090', '#ffad1f', '#ffd03f', '#e0245e', '#f6809a', '#794bc4', '#a37ced', '#f45d22', '#ff8d57', '#1da1f2', '#71c9f8'];
-
-
-/*var nodes = [
-      { name: "Technology",target: [0], value: 40},
-      { name: "Movies", target: [0], value: 40 },
-      { name: "Sports", target: [0, 1], value: 65 },
-      { name: "Education", target: [0, 1, 2], value: 52 },
-      { name: "Religion", target: [0, 3], value: 48 },
-      { name: "Politics", target: [0,3,4], value: 40 },
-      { name: "Books", target: [0,3,4,5], value: 36 },
-      { name: "Movies", target: [0, 1, 2], value: 52 },
-      { name: "Makeup", target: [0, 1, 2, 8], value: 37 },
-      { name: "Television", target: [0,1,2], value: 35 },
-      { name: "Music", target: [0,1,2,3,9], value: 67 },
-      { name: "Entertainment", target: [0,1,2,3,4,5,6,7,8,10], value: 68 },
-      { name: "Misc", target: [0,1,2,7,8 ], value: 16 },
-      { name: "Travel", target: [0,1,2,7,8], value: 25 },
-      { name: "Clothes", target: [0,1,2,3,4,5,6,7,8,9,10,11,12], value: 45 },
-      { name: "College", target: [0,1,2,7,8], value: 25 },
-      { name: "Memes", target: [0,1,2,12], value: 57 },
-      { name: "Exercise", target: [0,9,10], value: 25 },
-      { name: "Social Media", target: [0,9,10], value: 37 },
-];*/
-
-
 
 var links = [];
 
@@ -84,7 +55,7 @@ var force = d3.layout.force()
 
       var link = myChart.selectAll('line')
             .data(links).enter().append('line')
-            .attr('stroke', '#000000')
+            .attr('stroke', '#536870')
             .attr('strokewidth', '1');
 
       var node =  myChart.selectAll('circle')
@@ -106,7 +77,7 @@ var force = d3.layout.force()
             })
             .attr('fill', function(d,i){
                   if ( i >= 0 ) {
-                        return colors[i];
+                        return '#1DA1F2';
                   } else {
                         return '#fff';
                   }
